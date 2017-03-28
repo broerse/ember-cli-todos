@@ -42,8 +42,11 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
+  ENV.remote_couch = 'http://localhost:5984/todo';
+  ENV.local_couch = 'todo';
   if (environment === 'production') {
-
+    ENV.rootURL = '/todo/_design/todos/_rewrite/';
+    ENV.remote_couch = 'http://localhost:5984/todo';
   }
 
   return ENV;

@@ -1,28 +1,9 @@
-import DS from 'ember-data';
+import DS from "ember-data";
+import { Model } from 'ember-pouch';
 
-var Todo = DS.Model.extend({
-  title: DS.attr('string'),
-  isCompleted: DS.attr('boolean', { defaultValue: false })
-});
-
-Todo.reopenClass({
-  FIXTURES: [
-    {
-      id: '1',
-      title: 'install ember-cli',
-      isCompleted: true
-    },
-    {
-      id: '2',
-      title: 'install additional dependencies',
-      isCompleted: true
-    },
-    {
-      id: '3',
-      title: 'develop amazing things',
-      isCompleted: false
-    }
-  ]
+var Todo = Model.extend({
+	title: DS.attr('string'),
+	isCompleted : DS.attr('boolean')
 });
 
 export default Todo;
